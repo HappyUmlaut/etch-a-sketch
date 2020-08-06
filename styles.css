@@ -1,0 +1,78 @@
+body{
+    background-color: azure;
+}
+
+h1{
+    font-family: 'handwrittenFont';
+    font-size: 60px;
+    text-align: center;
+}
+
+@font-face{
+    font-family: handwrittenFont;
+    src: url(IndieFlower-Regular.ttf);
+}
+
+.container{
+    width:25%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+}
+
+.filler{
+    width: 12.5%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+}
+
+#btns{
+    display: flex;
+    height: 30vh;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.grid{
+    border: solid black 1px;
+    background-color: whitesmoke;
+}
+
+.grid--black{
+    background-color: black;
+}
+
+.btn{
+    height: 7.5vh;
+    width: 10vw;
+    min-width: 97px;
+    font-size: 17px;
+}
+
+#resize{
+    min-width: 140px;
+}
+
+#start{
+    min-width: 140px;
+    opacity: 0;
+}
+
+#clear{
+    min-width: 140px;
+}
+.wrapper{
+    width: 90vw;
+    height: 50vh;
+    margin: auto;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    border: solid;
+}
