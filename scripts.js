@@ -6,6 +6,7 @@ resizeButton.addEventListener('click',changeFlag);
 resizeButton.addEventListener('click',generateSquareGrid);
 clearButton.addEventListener('click',cleanGrid);
 startButton.addEventListener('click',addListener);
+window.addEventListener('resize',modifyGridPercentages);
 let lastGridDefinition;
 let flag = 0;
 
@@ -33,16 +34,36 @@ function removeListener(){
         for (let i=0; i<divsPerSide; i++){
             mydiv = document.createElement('div');
             mydiv.className = 'grid';
-            mydiv.style.width = divs__width +'px';
-            mydiv.style.height = divs__width +'px';
+            mydiv.style.width = divs__width +'%';
+            mydiv.style.height = mydiv.clientWidth +'px';
             container.appendChild(mydiv);
         }
     }  
 }
 
+function modifyGridPercentages() {
+    let divs__width__percentage = 0; // Percentage for
+    let container__width_noBorders;
+    let numberOfChilds = container.childElementCount;
+    let child;    
+    container = document.querySelector('.container');
+    container__width = container.offsetWidth;
+    container__width_noBorders = container__width - divsPerSide*2;
+    divs__width = container__width_noBorders/divsPerSide;
+    divs__width__percentage = divs__width*100/container__width;
+    for(let i=0; i<numberOfChilds; i++) {
+        child = container.childNodes[i];
+        child.style.width = divs__width__percentage +'%';
+        child.style.height = child.clientWidth +'px';
+    }
+}
+
 
 
 function calculateDivsDimensions(divsPerSide){
+    let divs__width__percentage = 0; // Percentage for
+            //the div width without the borders
+    let container__width_noBorders;
     if(lastGridDefinition  && flag===0){
         divsPerSide = lastGridDefinition;
     }else if(divsPerSide!==16){
@@ -50,11 +71,12 @@ function calculateDivsDimensions(divsPerSide){
     } 
     container = document.querySelector('.container');
     container__width = container.offsetWidth;
-    divs__width = container__width/divsPerSide;
-    divs__width = divs__width - 2 // Toma en cuenta el borde de cada div
-    console.log(flag);
+    container__width_noBorders = container__width - divsPerSide*2;
+    divs__width = container__width_noBorders/divsPerSide;
+    divs__width__percentage = divs__width*100/container__width;
+    console.log(divs__width__percentage);
     flag = 0;
-    return divs__width;
+    return divs__width__percentage;
 }
 
 function generateSquareGrid(divs__width){
@@ -72,8 +94,8 @@ function generateSquareGrid(divs__width){
         for (let i=0; i<divsPerSide; i++){
             mydiv = document.createElement('div');
             mydiv.className = 'grid';
-            mydiv.style.width = divs__width +'px';
-            mydiv.style.height = divs__width +'px';
+            mydiv.style.width = divs__width +'%';
+            mydiv.style.height = divs__width +'%';
             container.appendChild(mydiv);
         }
     }

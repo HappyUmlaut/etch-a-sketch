@@ -15,7 +15,9 @@ h1{
 
 .container{
     width:25%;
+    /* min-width: 450px; */
     height: 100%;
+    /* min-height: 400px; */
     display: flex;
     flex-flow: row wrap;
     align-content: center;
@@ -41,6 +43,7 @@ h1{
 .grid{
     border: solid black 1px;
     background-color: whitesmoke;
+
 }
 
 .grid--black{
@@ -74,5 +77,4 @@ h1{
     flex-flow: row-reverse nowrap;
     justify-content: flex-end;
     align-items: center;
-    border: solid;
 }
