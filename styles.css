@@ -15,16 +15,13 @@ h1{
 
 .container{
     width:25%;
-    /* min-width: 450px; */
     height: 100%;
-    /* min-height: 400px; */
     display: flex;
     flex-flow: row wrap;
     align-content: center;
 }
 
 .filler{
-    width: 12.5%;
     height: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -77,4 +74,13 @@ h1{
     flex-flow: row-reverse nowrap;
     justify-content: flex-end;
     align-items: center;
+}
+
+#right{
+    width: 13%;
+    padding-left: 50px;
+}
+
+#left{
+    width: 12%;
 }

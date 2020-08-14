@@ -5,11 +5,22 @@
          <title>Etch-a-Sketch</title>
          <meta charset="UTF-8">
          <link rel="stylesheet" href='styles.css'>
+         <link rel="icon" type="image/x-icon" href="favicon.ico">
      </head>
      <body>
         <h1>Etch-a-Sketch</h1>
         <div class='wrapper'>
-            <div class="filler"></div>
+            <div class="filler" id="right">
+                <fieldset>
+                    <input type="radio" id="black/white" name="mode" 
+                            value="black/white" checked>
+                    <label for="black/white">Black/White</label><br>
+                    <input type="radio" id="rainbow" name="mode" value="rainbow">
+                    <label for="rainbow">Rainbow</label><br>
+                    <input type="radio" id="grayscale" name="mode" value="grayscale">
+                    <label for="grayscale">Grayscale</label>
+                </fieldset>
+            </div>
             <div class="container">
 
             </div>
@@ -24,7 +35,8 @@
                     Click to start
                  </button>
             </div>
-            <div class="filler"></div>
+            <div class="filler" id="left">
+            </div>
         </div>
          <script src='scripts.js'></script>
      </body>
